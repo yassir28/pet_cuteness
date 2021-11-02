@@ -13705,93 +13705,6 @@ if (outputEl) {{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Creating a test set</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">split_train_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">test_ratio</span><span class="p">):</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-    <span class="n">shuffled_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-    <span class="n">test_set_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="n">test_ratio</span><span class="p">)</span>
-    <span class="n">test_indices</span> <span class="o">=</span> <span class="n">shuffled_indices</span><span class="p">[:</span><span class="n">test_set_size</span><span class="p">]</span>
-    <span class="n">train_indices</span> <span class="o">=</span> <span class="n">shuffled_indices</span><span class="p">[</span><span class="n">test_set_size</span><span class="p">:]</span>
-    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_indices</span><span class="p">],</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_indices</span><span class="p">]</span>
-<span class="n">train_set</span><span class="p">,</span> <span class="n">test_set</span> <span class="o">=</span> <span class="n">split_train_test</span><span class="p">(</span><span class="n">data_set</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">train_set</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[81]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>7930</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">test_set</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[74]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1982</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
@@ -13858,64 +13771,6 @@ if (outputEl) {{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">test_set</span><span class="p">[</span><span class="s1">&#39;Pawpularity&#39;</span><span class="p">]</span> 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Pawpularity&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<div>                            <div id="bf2d69a6-6778-4419-8921-b5423c92865b" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("bf2d69a6-6778-4419-8921-b5423c92865b")) {                    Plotly.newPlot(                        "bf2d69a6-6778-4419-8921-b5423c92865b",                        [{"alignmentgroup":"True","bingroup":"x","hovertemplate":"Pawpularity=%{x}<br>count=%{y}<extra></extra>","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"type":"histogram","x":[40,64,26,73,39,24,36,39,29,27,79,38,52,41,15,31,88,40,19,53,22,12,42,29,18,91,30,55,28,37,18,56,18,63,18,25,59,7,93,49,100,36,9,57,30,37,49,4,31,24,12,28,35,41,36,47,62,23,8,31,35,20,50,74,32,32,22,39,54,80,14,31,32,30,48,98,44,88,42,33,20,31,100,42,18,36,22,28,29,37,66,55,33,34,40,31,38,29,25,25,47,41,39,30,95,81,29,30,95,59,48,24,100,20,33,49,17,55,21,36,20,21,44,68,58,19,24,29,35,28,45,38,12,35,48,28,25,59,33,41,29,39,23,51,38,43,32,64,17,17,58,42,27,52,81,22,22,44,26,64,25,75,37,39,43,24,29,49,100,90,24,24,27,56,27,52,36,35,16,46,43,11,33,70,48,4,32,36,52,25,32,15,6,17,26,46,21,100,42,36,53,29,28,36,17,42,55,56,22,17,57,38,27,28,3,64,29,28,30,24,36,27,53,36,34,16,43,26,20,30,22,22,34,28,26,38,36,41,34,11,26,4,33,26,91,26,38,38,25,32,34,24,41,51,31,31,21,21,28,12,22,26,66,31,33,29,56,35,65,100,29,28,48,54,15,100,3,17,23,27,77,63,39,16,34,65,100,43,10,17,26,47,56,11,40,20,71,51,91,71,31,26,42,28,56,41,62,38,16,27,5,17,50,100,47,22,52,44,48,23,30,35,19,100,44,13,31,53,27,29,3,36,23,40,43,30,18,43,48,70,54,29,80,36,31,47,28,17,28,23,100,100,25,31,45,21,31,38,31,49,3,44,31,27,21,38,20,37,6,38,23,46,45,43,43,22,28,34,45,45,7,11,29,37,41,26,18,22,50,32,32,18,39,98,16,54,15,48,27,20,35,22,15,100,40,29,24,21,30,31,3,56,74,38,26,79,17,53,24,26,50,40,62,76,48,41,41,27,55,33,26,45,48,25,37,34,38,27,21,15,49,59,26,40,31,25,12,37,25,15,19,61,50,47,38,40,18,21,19,25,68,48,25,2,18,30,33,55,19,23,24,16,54,100,32,39,20,22,19,20,21,28,19,40,45,100,93,28,58,22,48,43,40,57,25,55,100,45,37,59,19,30,88,38,25,35,34,40,27,30,54,48,41,18,47,42,65,16,7,27,30,51,18,50,45,39,24,2,75,56,35,87,54,31,8,3,63,32,3,24,30,7,17,21,35,58,16,49,40,49,25,26,31,21,14,34,37,58,82,52,28,29,30,18,15,23,28,89,38,26,24,81,34,33,34,100,52,51,67,36,6,64,34,29,22,24,45,36,34,76,36,88,63,32,39,51,20,32,45,42,26,73,30,23,36,34,52,34,40,46,31,53,38,62,63,28,9,40,25,33,54,38,16,64,30,39,24,18,57,20,53,47,31,16,69,15,38,45,34,29,35,35,28,23,24,47,33,2,28,15,49,42,12,27,28,13,100,15,27,28,55,31,94,44,84,46,31,22,83,26,33,29,25,63,5,32,27,30,16,22,25,2,27,64,31,49,22,32,39,53,24,41,49,46,25,58,3,16,40,20,42,41,34,13,24,41,24,18,64,29,69,31,15,26,34,34,49,41,52,46,29,27,18,25,32,50,45,36,14,66,28,29,3,21,26,21,25,44,28,23,71,70,17,31,18,17,55,56,36,23,15,63,48,28,30,26,34,26,23,25,96,19,17,70,21,46,82,91,71,24,37,23,23,63,43,74,51,9,48,22,38,60,10,43,35,42,45,53,21,30,26,36,30,32,30,27,30,36,24,37,78,40,31,35,73,100,26,38,10,40,26,37,83,29,58,37,100,48,100,50,28,11,42,37,37,9,48,23,30,18,31,21,41,44,5,82,46,30,23,33,44,37,35,100,34,42,46,34,61,43,29,3,18,39,26,31,15,100,25,39,18,31,4,13,28,38,33,28,25,31,28,24,48,100,21,44,49,50,28,100,35,40,33,22,36,29,7,30,32,52,67,22,59,60,14,100,8,40,33,35,34,42,13,41,71,31,57,26,20,76,32,29,51,62,27,50,12,25,19,100,13,6,37,26,30,100,20,70,25,78,32,22,65,17,25,39,40,31,29,30,70,56,62,27,45,33,38,17,34,43,30,64,27,3,36,35,31,28,29,47,26,28,62,100,16,54,32,31,51,54,24,77,81,6,51,30,11,54,25,3,18,58,33,54,28,31,20,22,12,47,31,36,77,45,48,32,46,50,45,22,35,29,58,23,19,61,43,30,28,28,13,18,28,35,41,17,25,87,55,26,32,53,31,25,44,37,100,91,100,36,100,60,35,11,32,59,53,31,21,31,32,30,39,43,61,29,35,23,26,30,63,12,41,35,29,21,41,16,29,22,10,3,81,29,21,51,24,33,41,84,25,61,42,23,25,26,24,30,13,26,35,23,27,18,34,3,29,22,23,61,30,46,18,3,50,17,5,49,70,42,41,24,9,20,21,30,2,21,42,41,30,24,47,78,33,41,64,61,18,47,24,20,14,100,100,37,26,22,47,29,43,44,31,7,24,35,38,27,49,17,26,24,22,36,67,21,34,35,52,88,35,19,27,39,19,30,49,62,50,32,84,40,19,41,27,34,24,29,31,42,74,12,64,41,75,64,55,34,60,15,28,24,42,35,57,59,18,32,17,29,45,100,30,2,29,38,37,74,40,29,29,29,36,32,29,7,100,34,35,30,29,30,29,17,73,23,58,55,24,26,20,49,65,48,33,24,29,34,29,1,39,39,37,22,56,7,25,3,50,40,35,36,32,27,40,11,61,26,36,24,27,22,37,83,31,43,47,60,37,41,64,62,22,28,10,14,22,38,66,65,32,28,27,25,9,32,63,26,63,54,70,27,42,30,30,34,39,34,29,27,70,68,32,48,26,39,37,25,25,42,29,26,35,20,23,18,17,23,45,30,24,34,100,41,31,49,29,56,54,58,34,37,27,19,79,30,5,100,67,60,25,26,58,32,42,42,80,5,26,42,71,40,90,24,43,43,38,24,7,12,39,43,47,37,20,24,36,32,11,36,26,43,26,13,46,11,28,21,51,24,26,43,60,100,30,32,52,17,100,42,19,59,81,22,53,30,13,45,100,49,2,31,28,28,38,29,44,24,38,31,31,43,28,20,36,24,38,31,36,30,47,13,18,93,32,26,29,47,86,40,17,36,33,40,32,46,25,100,32,100,28,39,35,33,50,27,97,38,22,42,41,71,47,14,75,33,28,31,29,36,54,100,66,28,18,37,49,40,24,27,67,42,27,63,32,52,100,100,29,29,37,36,87,33,40,66,27,45,18,38,22,41,23,40,30,98,41,56,22,36,25,34,100,55,100,48,30,29,38,37,29,46,28,43,45,35,19,21,26,3,18,37,35,24,35,13,40,35,63,26,75,42,35,42,24,71,48,40,20,39,25,15,55,26,33,53,35,29,48,27,31,20,41,35,32,30,40,23,42,15,72,22,60,32,23,18,29,30,48,71,21,23,100,28,79,24,100,52,36,38,100,28,32,27,25,22,27,19,32,32,30,33,29,24,19,24,12,42,100,40,32,60,11,12,16,33,40,29,94,27,26,14,35,20,19,39,18,44,32,26,26,38,29,18,84,35,57,44,19,18,26,49,65,39,36,24,35,55,24,29,31,26,100,48,25,30,51,65,32,100,47,55,47,26,39,32,26,41,39,28,33,2,47,25,100,24,25,35,28,13,33,18,42,2,59,52,52,25,43,24,54,12,6,87,68,45,30,35,20,28,100,31,40,25,22,85,21,22,21,73,34,52,24,38,100,86,26,5,15,34,31,32,21,32,28,2,48,30,39,23,76,30,12,27,18,35,5,31,30,32,14,43,51,28,35,43,46,27,30,31,22,15,26,37,29,67,9,13,59,24,21,24,42,39,58,29,81,45,20,68,30,23,18,44,22,59,28,35,100,30,47,16,31,65,20,33,35,85,32,23,64,26,37,28,31,26,37,18,31,65,26,39,17,28,22,27,48,51,56,48,43,41,62,27,32,31,91,34,3,69,100,34,59,50,45,12,13,28,10,37,38,39,33,31,30,15,22,10,86,38,29,25,44,22,27,40,44,100,43,15,22,37,37,20,69,27,36,21,19,27,18,15,79,63,100,39,31,2,60,29,100,35,37,100,49,18,31,95,34,22,30,29,43,34,24,48,83,30,19,22,35,38,42,23,32,100,52,29,12,23,3,69,100,43,37,67,16,65,11,55,38,20,83,66,70,41,11,62,2,83,25,35,42,31,29,45,18,28,35,22,37,15,39,18,30,21,40,42,34,36,26,81,29,35,32,47,35,9,18,49,35,24,100,76,26,36,72,23,100,20,39,31,18,55,30,19,41,22,15,16,34,30,71,22,26,30,54,16,28,23,37,34,42,45,41,41,33,28,26,25,26,85,21,30,11,66,79,32,31,20,19,21,89],"xaxis":"x","yaxis":"y"}],                        {"barmode":"relative","legend":{"tracegroupgap":0},"margin":{"t":60},"template":{"data":{"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Pawpularity"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"}}},                        {"responsive": true}                    ).then(function(){
-                            
-var gd = document.getElementById('bf2d69a6-6778-4419-8921-b5423c92865b');
-var x = new MutationObserver(function (mutations, observer) {{
-        var display = window.getComputedStyle(gd).display;
-        if (!display || display === 'none') {{
-            console.log([gd, 'removed!']);
-            Plotly.purge(gd);
-            observer.disconnect();
-        }}
-}});
-
-// Listen for the removal of the full notebook cells
-var notebookContainer = gd.closest('#notebook-container');
-if (notebookContainer) {{
-    x.observe(notebookContainer, {childList: true});
-}}
-
-// Listen for the clearing of the current output cell
-var outputEl = gd.closest('.output');
-if (outputEl) {{
-    x.observe(outputEl, {childList: true});
-}}
-
-                        })                };                });            </script>        </div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
@@ -13929,7 +13784,7 @@ if (outputEl) {{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;pawtegory&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;Pawpularity&quot;</span><span class="p">],</span>
@@ -13948,13 +13803,13 @@ if (outputEl) {{
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[115]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x24341ef7fa0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x165ac1e3f10&gt;</pre>
 </div>
 
 </div>
@@ -13980,7 +13835,7 @@ if (outputEl) {{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">StratifiedShuffleSplit</span>
@@ -14003,7 +13858,7 @@ if (outputEl) {{
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[118]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -14030,7 +13885,7 @@ Name: pawtegory, dtype: float64</pre>
 </div># lets compate it to our raw data
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;pawtegory&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_set</span><span class="p">)</span>
@@ -14046,7 +13901,7 @@ Name: pawtegory, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[106]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -14086,10 +13941,10 @@ Name: pawtegory, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">strat_test_set</span><span class="p">[</span><span class="s2">&quot;pawtegory&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">strat_test_set</span><span class="p">)</span> <span class="o">-</span>  <span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;pawtegory&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_set</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span><span class="mi">100</span> <span class="o">*</span><span class="mi">100</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">strat_test_set</span><span class="p">[</span><span class="s2">&quot;pawtegory&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">strat_test_set</span><span class="p">)</span> <span class="o">-</span>  <span class="n">data_set</span><span class="p">[</span><span class="s2">&quot;pawtegory&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_set</span><span class="p">)</span> <span class="p">)</span>  <span class="o">*</span><span class="mi">100</span>
 </pre></div>
 
     </div>
@@ -14102,40 +13957,27 @@ Name: pawtegory, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[109]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3     0.160261
-4    -0.714304
-5     1.601079
-2    -2.326067
-6    -0.221312
-7    -2.152070
-1    -0.123630
-10    1.898706
-8    -0.086999
-9     1.964336
+<pre>3     0.001603
+4    -0.007143
+5     0.016011
+2    -0.023261
+6    -0.002213
+7    -0.021521
+1    -0.001236
+10    0.018987
+8    -0.000870
+9     0.019643
 Name: pawtegory, dtype: float64</pre>
 </div>
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -14285,6 +14127,155 @@ Name: Pawpularity, dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#&#39;Subject Focus&#39;, &#39;Eyes&#39;, &#39;Face&#39;, &#39;Near&#39;, &#39;Action&#39;, &#39;Accessory&#39;,&#39;Group&#39;, &#39;Collage&#39;, &#39;Human&#39;, &#39;Occlusion&#39;, &#39;Info&#39;, &#39;Blur&#39;,&#39;Pawpularity&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">strat_train_set</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 7929 entries, 667 to 8241
+Data columns (total 15 columns):
+ #   Column         Non-Null Count  Dtype   
+---  ------         --------------  -----   
+ 0   Id             7929 non-null   object  
+ 1   Subject Focus  7929 non-null   int64   
+ 2   Eyes           7929 non-null   int64   
+ 3   Face           7929 non-null   int64   
+ 4   Near           7929 non-null   int64   
+ 5   Action         7929 non-null   int64   
+ 6   Accessory      7929 non-null   int64   
+ 7   Group          7929 non-null   int64   
+ 8   Collage        7929 non-null   int64   
+ 9   Human          7929 non-null   int64   
+ 10  Occlusion      7929 non-null   int64   
+ 11  Info           7929 non-null   int64   
+ 12  Blur           7929 non-null   int64   
+ 13  Pawpularity    7929 non-null   int64   
+ 14  pawtegory      7929 non-null   category
+dtypes: category(1), int64(13), object(1)
+memory usage: 937.3+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">strat_test_set</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 1983 entries, 344 to 3510
+Data columns (total 15 columns):
+ #   Column         Non-Null Count  Dtype   
+---  ------         --------------  -----   
+ 0   Id             1983 non-null   object  
+ 1   Subject Focus  1983 non-null   int64   
+ 2   Eyes           1983 non-null   int64   
+ 3   Face           1983 non-null   int64   
+ 4   Near           1983 non-null   int64   
+ 5   Action         1983 non-null   int64   
+ 6   Accessory      1983 non-null   int64   
+ 7   Group          1983 non-null   int64   
+ 8   Collage        1983 non-null   int64   
+ 9   Human          1983 non-null   int64   
+ 10  Occlusion      1983 non-null   int64   
+ 11  Info           1983 non-null   int64   
+ 12  Blur           1983 non-null   int64   
+ 13  Pawpularity    1983 non-null   int64   
+ 14  pawtegory      1983 non-null   category
+dtypes: category(1), int64(13), object(1)
+memory usage: 234.7+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#copying into already named folders</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">strat_test_set</span><span class="p">[</span><span class="s2">&quot;Id&quot;</span><span class="p">]:</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Yas\Downloads\petfinder-pawpularity-score\train&quot;</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.jpg&quot;</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span> <span class="n">file</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\Yas\Desktop\test&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">strat_train_set</span><span class="p">[</span><span class="s2">&quot;Id&quot;</span><span class="p">]:</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Yas\Downloads\petfinder-pawpularity-score\train&quot;</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.jpg&quot;</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span> <span class="n">file</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\Yas\Desktop\train&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
